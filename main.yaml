@@ -36,7 +36,7 @@ spec:
           failureThreshold: 3
           httpGet:
             path: /health
-            port: influxdb
+            port: http
             scheme: HTTP
           initialDelaySeconds: 30
           periodSeconds: 10
@@ -45,12 +45,12 @@ spec:
         name: main
         ports:
           - containerPort: 8086
-            name: influxdb
+            name: http
         readinessProbe:
           failureThreshold: 3
           httpGet:
             path: /health
-            port: influxdb
+            port: http
             scheme: HTTP
           initialDelaySeconds: 5
           periodSeconds: 10
@@ -74,6 +74,6 @@ spec:
   ports:
     - protocol: TCP
       port: 8086
-      targetPort: influxdb
+      targetPort: http
   selector:
     app: influxdb

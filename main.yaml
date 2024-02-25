@@ -42,7 +42,7 @@ spec:
           periodSeconds: 10
           successThreshold: 1
           timeoutSeconds: 5
-        name: influxdb
+        name: main
         ports:
           - containerPort: 8086
             name: influxdb
